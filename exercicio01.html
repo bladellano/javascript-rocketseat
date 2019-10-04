@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Curso Javascript</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+
+	<h1>Exercício</h1>
+	<button onclick="mostraAlerta()" >Me pressione</button>
+	<br>
+	<br>
+	<input type="text" name="nome" id="nome">
+	<button class="botao">Adicionar</button>
+	<script>
+
+	var inputElement = document.getElementById('nome');
+	// console.log(inputElement);
+	var btnElement = document.querySelector('button.botao');
+	var inputElement = document.querySelector('input[name=nome]');
+	btnElement.onclick = function(){
+		var text = inputElement.value;
+		alert(text);
+	}
+
+		function mostraAlerta(){
+			alert('Botão foi clicado!');
+		}
+
+		for (var i = 0; i <= 100; i++) {
+			// console.log(i);
+		}
+
+		var j = 12312343;
+		while(j > 50){
+			// console.log(j);
+			j /= 5;
+		}
+
+		function exibeAlgo(){
+			console.log('Hello World')
+		}
+
+		// setInterval(exibeAlgo, 500);
+
+
+	</script>
+</body>
+</html>

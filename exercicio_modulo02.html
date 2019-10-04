@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Exericio Módulo 02</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="app">
+		<button id="criaElemento">Clique.</button>	
+
+		<input type="text" name="nome">
+		<button onclick="adicionar()">Adicionar</button>
+
+	</div>
+	<script>
+
+		(function(win,doc){
+			'use strict';
+			
+			//Exercício 01
+			var btnAddElement = doc.querySelector('#criaElemento');
+
+			btnAddElement.onclick = function(){
+
+				var boxElement = doc.createElement('div');
+
+				boxElement.style.width = '100px';
+				boxElement.style.height = '100px';
+				boxElement.style.backgroundColor = '#f00';
+
+				boxElement.onmouseover = function(){
+					this.style.backgroundColor = getRandomColor();
+				};
+
+				var boxApp = doc.querySelector('#app');
+				boxApp.appendChild(boxElement);	
+			};
+
+			function getRandomColor() {
+				var letters = "0123456789ABCDEF";
+				var color = "#";
+				for (var i = 0; i < 6; i++) {
+					color += letters[Math.floor(Math.random() * 16)];
+				}
+				return color;
+			}
+
+			//Exercício 02
+			var nomes = ["Diego","Gabriel","Lucas"];
+
+			var ulElement = doc.createElement('ul');
+			
+			nomes.forEach(function(nome){
+				var li = doc.createElement('li');
+				li.appendChild(document.createTextNode(nome));
+				ulElement.append(li);
+			});
+
+			var boxApp = doc.querySelector('#app');
+			boxApp.appendChild(ulElement);				
+
+		})(window,document);
+
+		//Exercício 03
+		var inputValue = document.querySelector('input[name="nome"]');
+		var ulElementHtml = document.querySelector('ul');
+		function adicionar(){
+			var li = document.createElement('li');
+			li.appendChild(document.createTextNode(inputValue.value));
+			ulElementHtml.append(li);
+		}
+
+	</script>
+</body>
+</html>
